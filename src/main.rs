@@ -15,11 +15,7 @@ fn fold_line<O: Write>(
     let mut start = 0;
     let mut width = 0;
     let mut last_word_width = 0;
-    loop {
-        let end = match indices.next() {
-            Some(i) => i,
-            None => break,
-        };
+    while let Some(end) = indices.next() {
         // This is located before incrementing width (and thereby finalizing that the character
         // will appear in the output) to prevent prematurely adding a newline when not necessary.
         if width == max_width.get() {
