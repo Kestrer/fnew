@@ -1,6 +1,6 @@
 use clap::{App, Arg};
 use std::fs::File;
-use std::io::{self, BufRead, BufReader, Write};
+use std::io::{self, BufRead, BufReader, Write, ErrorKind};
 use std::process::exit;
 use unicode_segmentation::UnicodeSegmentation;
 use std::num::NonZeroUsize;
@@ -165,7 +165,12 @@ fn main() {
             split_whitespace,
         ),
     } {
-        eprintln!("fnew: I/O error: {}", e);
-        exit(1);
+        match e.kind() {
+            ErrorKind::BrokenPipe => (),
+            _ => {
+                eprintln!("fnew: I/O error: {}", e);
+                exit(1);
+            }
+        }
     }
 }

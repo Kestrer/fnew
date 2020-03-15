@@ -1,6 +1,6 @@
 [package]
 name = "fnew"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Koxiaet <38139193+Koxiaet@users.noreply.github.com>"]
 edition = "2018"
 description = "A Unicode-aware line-oriented drop-in replacement for coreutils' fold."
