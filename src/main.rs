@@ -1,13 +1,13 @@
 use clap::{App, Arg};
 use std::fs::File;
-use std::io::{self, BufRead, BufReader, Write, ErrorKind};
+use std::io::{self, BufRead, BufReader, ErrorKind, Write};
+use std::num::NonZeroUsize;
 use std::process::exit;
 use unicode_segmentation::UnicodeSegmentation;
-use std::num::NonZeroUsize;
 
 fn fold_line<O: Write>(
     line: &[u8],
-    mut indices: impl Iterator<Item = usize>,
+    indices: impl Iterator<Item = usize>,
     output: &mut O,
     max_width: NonZeroUsize,
     split_whitespace: bool,
@@ -15,7 +15,7 @@ fn fold_line<O: Write>(
     let mut start = 0;
     let mut width = 0;
     let mut last_word_width = 0;
-    while let Some(end) = indices.next() {
+    for end in indices {
         // This is located before incrementing width (and thereby finalizing that the character
         // will appear in the output) to prevent prematurely adding a newline when not necessary.
         if width == max_width.get() {
