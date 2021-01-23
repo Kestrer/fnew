@@ -1,15 +1,15 @@
 [package]
 name = "fnew"
 version = "1.0.1"
-authors = ["Koxiaet <38139193+Koxiaet@users.noreply.github.com>"]
+authors = ["Kestrer <kestrer.dev@gmail.com>"]
 edition = "2018"
 description = "A Unicode-aware line-oriented drop-in replacement for coreutils' fold."
 readme = "README.md"
-repository = "https://github.com/Koxiaet/fnew"
+repository = "https://github.com/Kestrer/fnew"
 license = "MIT OR Apache-2.0"
 keywords = ["fold", "coreutils", "text-processing", "command-line-utility"]
 categories = ["command-line-utilities", "text-processing", "value-formatting"]
 
 [dependencies]
-clap = "2.33.0"
-unicode-segmentation = "1.6.0"
+clap = "2.33.3"
+unicode-segmentation = "1.7.1"

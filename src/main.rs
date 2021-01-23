@@ -91,7 +91,7 @@ fn main() {
     let matches = App::new("fnew")
         .version("1.0")
         .about("Utility to fold long lines.")
-        .author("Koxiaet")
+        .author("Kestrer")
         .arg(
             Arg::with_name("width")
                 .help("Width to fold at.")
