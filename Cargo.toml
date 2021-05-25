@@ -11,5 +11,8 @@ keywords = ["fold", "coreutils", "text-processing", "command-line-utility"]
 categories = ["command-line-utilities", "text-processing", "value-formatting"]
 
 [dependencies]
-clap = "2.33.3"
+clap = { version = "2.33.3", optional = true }
 unicode-segmentation = "1.7.1"
+
+[features]
+default = ["clap"]
