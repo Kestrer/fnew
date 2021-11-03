@@ -2,7 +2,7 @@
 name = "fnew"
 version = "1.0.1"
 authors = ["Kestrer <kestrer.dev@gmail.com>"]
-edition = "2018"
+edition = "2021"
 description = "A Unicode-aware line-oriented drop-in replacement for coreutils' fold."
 readme = "README.md"
 repository = "https://github.com/Kestrer/fnew"
